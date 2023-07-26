@@ -4,6 +4,7 @@ This project aims to predict the angles of 14 fingers from electromyography (EMG
 
 ## Data Description
 
+we will use Data Citations 2
 The data consists of six files in MATLAB format: E1.mat and E2.mat for the EMG and ACC data, and glove1.mat and glove2.mat for the glove data. The glove data contains the angles of 22 sensors attached to a CyberGlove II device worn by the subjects. The stimulus1.mat and stimulus2.mat files contain the information about the hand gestures performed by the subjects.
 
 The data is preprocessed using Pandas, Numpy, and Scipy libraries to extract the relevant features and normalize them. The glove data is converted to finger angles using a predefined array of maximum angles for each sensor. The finger angles are used as the target variable for the prediction task, while the EMG and ACC data are used as the input variable.
@@ -50,9 +51,7 @@ NOTE: in future work I will push the best model to the Huggingface for the ease 
 - Plot the loss curves for the training and test data and analyze how the model converges over time.
 - Visualize the predicted finger angles and compare them with the true finger angles using matplotlib or seaborn libraries.
 
-- What I'm looking to do 😊 is to Build a model using PyTorch, a popular deep learning framework that provides high-level APIs for creating neural networks. The model consists of a HuggingFace 😊 Transformers model, such as AutoModelForSeq2SeqLM, followed by two linear layers with dropout. The model will also tak the EMG and ACC data as input and generates the finger angles as output.The model will be trained using a constant learning rate and a fixed number of epochs. The loss function used will be used is the mean-squared error loss, which measures the square of the difference between the predicted values and the actual values. The optimizer which will be used is Adam, which is an adaptive gradient-based algorithm that updates the parameters based on the gradients of the loss function.
+- What I'm looking to do 😊 is to Build a model using PyTorch, a popular deep learning framework that provides high-level APIs for creating neural networks. The model consists of a HuggingFace 😊 Transformers model, such as AutoModelForSeq2SeqLM, followed by two linear layers with dropout. The model will also take the EMG and ACC data as input and generates the finger angles as output.The model will be trained using a constant learning rate and a fixed number of epochs. The loss function used will be used is the mean-squared error loss, which measures the square of the difference between the predicted values and the actual values. The optimizer which will be used is Adam, which is an adaptive gradient-based algorithm that updates the parameters based on the gradients of the loss function.
 
 ## References
-
-: [Markdown Guide](https://www.markdownguide.org/)
-: [NinaPro Database](http://ninapro.hevs.ch/)
+[NinaPro Database](http://ninapro.hevs.ch/)
