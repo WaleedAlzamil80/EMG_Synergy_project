@@ -28,6 +28,8 @@ The linear layers are fully connected layers that perform a linear transformatio
 - The seventh layer has 2048 input features and 512 output features.
 - The eighth layer has 512 input features and 14 output features.
 
+Some dropout layers are added between the layers.
+
 #### The model is trained using a constant learning rate and a fixed number of epochs. The loss function used is the mean squared error (MSE) loss, which measures the difference between the predicted values and the true values. The optimizer used is Adam, which is an adaptive gradient-based algorithm that updates the parameters based on the gradients of the loss function.
 
 ## How to Use
@@ -50,8 +52,11 @@ NOTE: in future work, I will push the best model to the Huggingface for the ease
 - Use a different loss function, such as mean absolute error (MAE) or mean squared logarithmic error (MSLE), and compare the results with MSE.
 - Plot the loss curves for the training and test data and analyze how the model converges over time.
 - Visualize the predicted finger angles and compare them with the true finger angles using Matplotlib or Seaborn libraries.
+- Validate the collected data.
+- Fine tune the model using the collected data and validate the model.
 
 - What I'm looking to do 😊 is to Build a model using PyTorch, a popular deep-learning framework that provides high-level APIs for creating neural networks. The model consists of a HuggingFace 😊 Transformers model, such as AutoModelForSeq2SeqLM, followed by two linear layers with dropout. The model will also take the EMG and ACC data as input and generates the finger angles as output. The model will be trained using a constant learning rate and a fixed number of epochs. The loss function used will be used is the mean-squared error loss, which measures the square of the difference between the predicted values and the actual values. The optimizer which will be used is Adam, which is an adaptive gradient-based algorithm that updates the parameters based on the gradients of the loss function.
 
 ## References
 [NinaPro Database](http://ninapro.hevs.ch/)
+[scikit-learn for upsampling](https://scikit-learn.org/stable/modules/generated/sklearn.utils.resample.html#sklearn-utils-resample)
