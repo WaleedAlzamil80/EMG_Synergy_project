@@ -17,7 +17,7 @@ The model is built using PyTorch, a popular deep-learning framework that provide
 
 The linear layers are fully connected layers that perform a linear transformation on the input. The ReLU activation function is a non-linear function that returns the input if it is positive, and zero otherwise. The ReLU function helps to introduce non-linearity and avoid the vanishing gradient problem in the model.
 
-### The model has the following architecture:
+### The first model has the following architecture:
 
 - The first layer has 12 input features and 128 output features.
 - The second layer has 128 input features and 256 output features.
@@ -29,6 +29,24 @@ The linear layers are fully connected layers that perform a linear transformatio
 - The eighth layer has 512 input features and 14 output features.
 
 Some dropout layers are added between the layers.
+### The second model has the following architecture :
+using same architecture in the previous model but 3 LSTM layers were added
+in the first of the architecture. We need to consider preparing the data for
+the sequence model (padding to the maximum length and truncating to the
+minimum length) (using all the samples or using only the samples of motion as
+this may make a big difference as the samples with no motion is half the data
+and thus due to the way the data collected)
+### the third model has the following architecture :
+ - BatchNorm1d: Normalizes input data
+        - Linear (Dense): Maps input features to 1728 dimensions
+        - Reshape: Prepares data for convolution
+        - Dropout: Regularization with dropout rate of 0.1
+        - Conv1D: Performs 1D convolution with kernel size 3
+        - AvgPool1d: Reduces spatial dimensions using average pooling
+        - MaxPool1d: Reduces spatial dimensions using max pooling
+        - Flatten: Prepares data for fully connected layers
+        - Linear (Dense): Maps flattened input to 14 classes
+
 
 #### The model is trained using a constant learning rate and a fixed number of epochs. The loss function used is the mean squared error (MSE) loss, which measures the difference between the predicted values and the true values. The optimizer used is Adam, which is an adaptive gradient-based algorithm that updates the parameters based on the gradients of the loss function.
 
